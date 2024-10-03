@@ -8,9 +8,9 @@ export default function PopularPosts() {
       {popularPosts.map((post) => (
         <li
           key={post.title}
-          className="flex items-center gap-2 cursor-pointer py-2"
+          className="flex items-center gap-2 group cursor-pointer py-2"
         >
-          <Icons.arrowRight className="h-6 w-6" />
+          <Icons.arrowRight className="h-6 w-6 group-hover:translate-x-1 transition-all" />
           <p>{post.title}</p>
         </li>
       ))}
