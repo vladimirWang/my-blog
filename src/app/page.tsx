@@ -15,7 +15,7 @@ export default function Home() {
         </div>
         <div className="h-screen">
           <div>
-            {/* <h1 className="font-bold mb-4">TOP CATEGORIES</h1> */}
+            <h1 className="font-bold mb-4">TOP CATEGORIES</h1>
             <TopCategories />
           </div>
           <div className="mt-10 sticky top-0">
