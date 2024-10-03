@@ -53,7 +53,7 @@ export function formatDate(date: string, includeRelative = false) {
     day: "numeric",
     year: "numeric",
   });
-  if (includeRelative) {
+  if (!includeRelative) {
     return fullDate;
   } else {
     return `${fullDate} (${formattedDate})`;
