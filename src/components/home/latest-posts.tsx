@@ -2,7 +2,7 @@ import { formatDate, getBlogPosts } from "@/app/blog/utils";
 import Link from "next/link";
 
 export default function LatestPosts() {
-  let latestPosts = getBlogPosts();
+  const latestPosts = getBlogPosts();
   return (
     <>
       <h1 className="inline-block font-heading text-4xl tracking-tight lg:text-5xl">

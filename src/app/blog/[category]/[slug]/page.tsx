@@ -6,6 +6,15 @@ import Container from "@/components/Container";
 import { BreadcrumbWithCustomSeparator } from "@/components/breadcrumb-with-custom-separator";
 import CustomMDX from "@/components/mdx";
 
+// export async function generateStaticParams() {
+//   const posts = getBlogPosts();
+//   return posts.map((post) => {
+//     return {
+//       slug: post.slug,
+//     };
+//   });
+// }
+
 export default function Slug({
   params,
 }: {

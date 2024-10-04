@@ -7,15 +7,15 @@ function getMDXFiles(dir: string) {
 }
 
 function readMDXFile(filePath: fs.PathOrFileDescriptor) {
-  let rawContent = fs.readFileSync(filePath, "utf-8");
+  const rawContent = fs.readFileSync(filePath, "utf-8");
   return matter(rawContent);
 }
 
 function getMDXData(dir: string) {
-  let mdxFiles = getMDXFiles(dir);
+  const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     const { data: metadata, content } = readMDXFile(path.join(dir, file));
-    let slug = path.basename(file, path.extname(file));
+    const slug = path.basename(file, path.extname(file));
 
     return {
       slug,
@@ -48,7 +48,7 @@ export function formatDate(date: string, includeRelative = false) {
   } else {
     formattedDate = "Today";
   }
-  let fullDate = targetDate.toLocaleString("en-us", {
+  const fullDate = targetDate.toLocaleString("en-us", {
     month: "long",
     day: "numeric",
     year: "numeric",

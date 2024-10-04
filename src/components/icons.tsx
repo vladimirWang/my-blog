@@ -1,6 +1,5 @@
 import {
   Rss,
-  Check,
   Command,
   type Icon as LucidIcon,
   ArrowRight,

@@ -6,15 +6,23 @@ import { notFound } from "next/navigation";
 import CardCategory from "@/components/card-category";
 import Header from "@/components/Header";
 
+// export async function generateStaticParams() {
+//   const posts = getBlogPosts();
+//   return posts.map((post) => {
+//     return {
+//       category: post.metadata.category,
+//     };
+//   });
+// }
+
 export default function CategoryPage({
   params,
 }: {
   params: { category: string };
 }) {
-  let posts = getBlogPosts().filter(
+  const posts = getBlogPosts().filter(
     (post) => post.metadata.category === params.category
   );
-  console.log(posts, params.category, "--posts");
   if (!posts.length) {
     notFound();
   }
