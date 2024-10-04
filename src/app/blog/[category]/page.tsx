@@ -4,6 +4,7 @@ import Link from "next/link";
 import Container from "@/components/Container";
 import { notFound } from "next/navigation";
 import CardCategory from "@/components/card-category";
+import Header from "@/components/Header";
 
 export default function CategoryPage({
   params,
@@ -14,11 +15,18 @@ export default function CategoryPage({
     (post) => post.metadata.category === params.category
   );
   console.log(posts, params.category, "--posts");
-  if (!posts) {
+  if (!posts.length) {
     notFound();
   }
   return (
     <>
+      <Header>
+        <Container>
+          <h1 className="title font-semibold text-2xl tracking-wider mt-4 uppercase">
+            {params.category}
+          </h1>
+        </Container>
+      </Header>
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
           {posts
