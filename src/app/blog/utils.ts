@@ -28,6 +28,15 @@ function getMDXData(dir: string) {
 export function getBlogPosts() {
   return getMDXData(path.join(process.cwd(), "src/app/blog/contents"));
 }
+
+export function getTermsOfServices() {
+  return getMDXData(path.join(process.cwd(), "src/app/terms-of-services"));
+}
+
+export function getPrivacyPolicy() {
+  return getMDXData(path.join(process.cwd(), "src/app/privacy-policy"));
+}
+
 export function formatDate(date: string, includeRelative = false) {
   const currentDate = new Date();
   if (!date.includes("T")) {
