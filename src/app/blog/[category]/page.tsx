@@ -6,14 +6,14 @@ import { notFound } from "next/navigation";
 import CardCategory from "@/components/card-category";
 import Header from "@/components/Header";
 
-// export async function generateStaticParams() {
-//   const posts = getBlogPosts();
-//   return posts.map((post) => {
-//     return {
-//       category: post.metadata.category,
-//     };
-//   });
-// }
+export async function generateStaticParams() {
+  const posts = getBlogPosts();
+  return posts.map((post) => {
+    return {
+      category: post.metadata.category,
+    };
+  });
+}
 
 export default function CategoryPage({
   params,

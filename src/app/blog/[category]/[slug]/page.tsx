@@ -5,15 +5,16 @@ import Header from "@/components/Header";
 import Container from "@/components/Container";
 import { BreadcrumbWithCustomSeparator } from "@/components/breadcrumb-with-custom-separator";
 import CustomMDX from "@/components/mdx";
+import ReportViews from "@/components/ReportViews";
 
-// export async function generateStaticParams() {
-//   const posts = getBlogPosts();
-//   return posts.map((post) => {
-//     return {
-//       slug: post.slug,
-//     };
-//   });
-// }
+export async function generateStaticParams() {
+  const posts = getBlogPosts();
+  return posts.map((post) => {
+    return {
+      slug: post.slug,
+    };
+  });
+}
 
 export default function Slug({
   params,
@@ -26,6 +27,11 @@ export default function Slug({
   }
   return (
     <>
+      <ReportViews
+        slug={post.slug}
+        category={post.metadata.category}
+        title={post.metadata.title}
+      />
       <Header>
         <Container>
           <BreadcrumbWithCustomSeparator
