@@ -1,7 +1,16 @@
 import { db } from "@/db";
 
+function sleep(ms = 2000) {
+  return new Promise((r) => {
+    setTimeout(() => {
+      r(undefined);
+    }, ms);
+  });
+}
+
 export async function GET() {
   try {
+    // await sleep();
     const data = await db.blog.findMany({
       take: 10,
       select: {
